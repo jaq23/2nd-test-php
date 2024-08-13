@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<link rel="stylesheet" href="styles.css">
+<title> Registration </title>
+<h1>Register for an account </h1>
+
+</head>
+<body>
+    <div class="navigation">
+  <a href="index.html" >Home</a>
+  <a href="service.html" >Service</a>
+  <a class ="active" href="contact.html" >Contact</a>
+  <a href="login.html" >Login</a>
+</div>
+<div class="contact">
+	
+    <form accept-charset="UTF-8" action="submit_form.php" class="new_user"
+id="new_user" method="post">
+        <input name="authenticity_token" type="hidden"
+value="NNb6+J/j46LcrgYUC60wQ2titMuJQ5lLqyAbnbAUkdo="
+/>
+
+    <label for="user_email">Email:</label><br>
+    <input type="email" id="user_email" name="user[email]" placeholder="Email"><br><br>
+
+    <label for="user_name">User name:</label><br>
+    <input type="text" id="user_name" name="user[name]" placeholder="Create Username"><br><br>
+
+    <label for="user_password">Password:</label><br>
+    <input type="password" id="user_password" name="password" placeholder="Enter password"><br><br>
+
+    <label for="user_password_confirm">Confirm Password:</label><br>
+    <input type="password" id="user_password_confirm" name="user[password_confirm]" placeholder="Re-enter Password"><br><br>
+
+    <input class="btn btn-primary" name="commit" type="submit" value="Create account" />
+
+</form>
+</div>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('new_user');
+            const passwordField = document.getElementById('user_password');
+            const confirmPasswordField = document.getElementById('user_password_confirm');
+            const userNameField = document.getElementById('user_name');
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                const email = document.getElementById('user_email').value;
+                const password = passwordField.value;
+                const userName = userNameField.value; 
+                const confirmPassword = confirmPasswordField.value;
+
+
+                if (password !== confirmPassword) {
+                    alert("Please make sure your passwords match!");
+                    return;
+                }
+
+                const data = [
+                    ["Email", "Username", "Password", "Confirm Password"],
+                    [email, userName, password, confirmPassword]
+                ];
+
+                const ws = XLSX.utils.aoa_to_sheet(data);
+                const wb = XLSX.utils.book_new();
+                XLSX.utils.book_append_sheet(wb, ws, "Users");
+
+                XLSX.writeFile(wb, "user_info.xlsx");
+            });
+
+        });
+    </script>
+</html>
