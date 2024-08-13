@@ -1,0 +1,71 @@
+.navigation {
+  overflow: hidden;
+  background-color:#434f54;
+}
+
+.navigation a {
+  float: left;
+  color: #afccd5;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: wavy underline;
+  font-size: 30px;
+}
+
+.navigation a:hover {
+  background-color: #afccd5;
+  color: black;
+}
+
+.navigation a.active {
+  background-color: #afccd5;
+  color: black;
+}
+
+.contact{
+  margin: 0 auto;
+  width: 300px;
+  padding: 12px 20px;
+  border-radius: 10px;
+}
+.login{
+  margin: 0 auto;
+  width: 300px;
+  padding: 12px 20px;
+  border-radius: 20px;
+}
+
+body {
+  background-color: #8ca3ab;
+}
+
+img{
+  float: center;
+  display: inline-block;
+  border-radius: 6px;
+  padding: 10px 10px;
+
+}
+p {
+    background-color: #whitesmoke;
+    color: #afccd5;
+    margin: 10px;
+  }
+
+div {
+      color: black;
+      background-color: #afccd5;
+      margin: 2px;
+      font-size: 25px;
+    }
+
+h1{
+  text-align: center;
+}
+
+marquee{
+  height: 50px;
+  background-color: #434f54;
+  font-size: 30pt;
+  color:#afccd5;
+}
