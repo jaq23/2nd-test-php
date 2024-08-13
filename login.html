@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<link rel="stylesheet" href="styles.css">
+<title> Login </title>
+<head>
+	<h1> Login </h1>
+</head>
+<body>
+    <div class="navigation">
+  <a href="index.html" >Home</a>
+  <a href="service.html" >Service</a>
+  <a class ="contact.html" href="contact.html" >Contact</a>
+  <a class="active" href="login.html" >Login</a>
+</div>
+
+<div class="login">
+	<form accept-charset="UTF-8" action="/login" method="post">
+        <input name="authenticity_token" type="hidden"
+value="NNb6+J/j46LcrgYUC60wQ2titMuJQ5lLqyAbnbAUkdo="
+/>
+        <label for="session_email">Email:</label><br>
+        <input type="text" id="session_email" name="session[email]" placeholder="Username"><br><br>
+
+        <label for="session_password">Password:</label><br>
+        <input type="password" id="session_password" name="session[password]" placeholder="Password"><br><br>
+
+        <input class="btn btn-primary" name="commit" type="submit" value="submit"/>
+
+    </form>
+</div>
+
+</body>
+</html>
